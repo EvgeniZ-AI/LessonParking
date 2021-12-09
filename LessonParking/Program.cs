@@ -22,6 +22,9 @@ namespace LessonParking
             {
                 parking.Add(car);
             }
+
+            Console.WriteLine(parking["A001AA01"].name);
+            Console.WriteLine(parking["A001AA02"]?.name);
         }
     }
 }

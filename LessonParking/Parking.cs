@@ -12,6 +12,15 @@ namespace LessonParking
 
         private const int MAX_CARS = 100;
 
+        public Car this[string number]
+        {
+            get
+            {
+                var car = _cars.FirstOrDefault(c => c.Number == number);
+                return car;
+            }
+        }
+
         public int Count => _cars.Count;
 
         public string Name { get; set; }
@@ -37,7 +46,7 @@ namespace LessonParking
                 throw new ArgumentNullException(nameof(number), "number i null or empety.");
             }
 
-            var car = _cars.FirstOrDefault(c => c.name == number);
+            var car = _cars.FirstOrDefault(c => c.Number == number);
             if (car != null)
             {
                 _cars.Remove(car);
